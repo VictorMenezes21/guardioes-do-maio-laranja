@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% set titulo = conteudo.titulo %}
+
+{% block content %}
+<section class="content-page">
+    <div class="page-title">
+        <span class="badge">{{ conteudo.icone }} {{ conteudo.subtitulo }}</span>
+        <h1>{{ conteudo.titulo }}</h1>
+    </div>
+
+    <div class="content-grid">
+        {% for bloco in conteudo.blocos %}
+            <article class="card">
+                <h2>{{ bloco.titulo }}</h2>
+
+                {% if bloco.texto %}
+                    <p>{{ bloco.texto }}</p>
+                {% endif %}
+
+                {% if bloco.itens %}
+                    <ul class="pretty-list">
+                        {% for item in bloco.itens %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </article>
+        {% endfor %}
+    </div>
+
+    <div class="center-actions">
+        <a class="btn btn-secondary" href="{{ url_for('menu') }}">Voltar ao menu</a>
+    </div>
+</section>
+{% endblock %}

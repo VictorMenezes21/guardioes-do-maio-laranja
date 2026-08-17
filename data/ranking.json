@@ -1,0 +1,110 @@
+[
+    {
+        "nome": "Karen",
+        "idade": 19,
+        "grupo": "Adultos e Responsáveis",
+        "pontuacao": 180,
+        "pontuacao_maxima": 180,
+        "acertos": 9,
+        "erros": 0,
+        "aproveitamento": 100.0,
+        "tempo_segundos": 34.34,
+        "data_hora": "08/06/2026 22:41:09"
+    },
+    {
+        "nome": "Victor",
+        "idade": 25,
+        "grupo": "Adultos e Responsáveis",
+        "pontuacao": 180,
+        "pontuacao_maxima": 180,
+        "acertos": 9,
+        "erros": 0,
+        "aproveitamento": 100.0,
+        "tempo_segundos": 42.12,
+        "data_hora": "08/06/2026 22:51:37"
+    },
+    {
+        "nome": "Laura",
+        "idade": 18,
+        "grupo": "Adultos e Responsáveis",
+        "pontuacao": 180,
+        "pontuacao_maxima": 180,
+        "acertos": 9,
+        "erros": 0,
+        "aproveitamento": 100.0,
+        "tempo_segundos": 43.98,
+        "data_hora": "08/06/2026 22:39:24"
+    },
+    {
+        "nome": "Kaike",
+        "idade": 23,
+        "grupo": "Adultos e Responsáveis",
+        "pontuacao": 180,
+        "pontuacao_maxima": 180,
+        "acertos": 9,
+        "erros": 0,
+        "aproveitamento": 100.0,
+        "tempo_segundos": 73.78,
+        "data_hora": "08/06/2026 23:00:47"
+    },
+    {
+        "nome": "Isabela",
+        "idade": 24,
+        "grupo": "Adultos e Responsáveis",
+        "pontuacao": 180,
+        "pontuacao_maxima": 180,
+        "acertos": 9,
+        "erros": 0,
+        "aproveitamento": 100.0,
+        "tempo_segundos": 144.95,
+        "data_hora": "08/06/2026 22:33:27"
+    },
+    {
+        "nome": "Karen",
+        "idade": 19,
+        "grupo": "Adultos e Responsáveis",
+        "pontuacao": 160,
+        "pontuacao_maxima": 180,
+        "acertos": 7,
+        "erros": 2,
+        "aproveitamento": 77.8,
+        "tempo_segundos": 17.82,
+        "data_hora": "08/06/2026 22:40:15"
+    },
+    {
+        "nome": "Laura l",
+        "idade": 20,
+        "grupo": "Adultos e Responsáveis",
+        "pontuacao": 160,
+        "pontuacao_maxima": 180,
+        "acertos": 8,
+        "erros": 1,
+        "aproveitamento": 88.9,
+        "tempo_segundos": 77.67,
+        "data_hora": "08/06/2026 22:51:44"
+    },
+    {
+        "nome": "Menorzin",
+        "idade": 15,
+        "grupo": "Crianças e Adolescentes",
+        "pontuacao": 120,
+        "pontuacao_maxima": 180,
+        "acertos": 7,
+        "erros": 2,
+        "aproveitamento": 77.8,
+        "tempo_segundos": 28.44,
+        "data_hora": "08/06/2026 22:42:06"
+    },
+    {
+        "nome": "Laura",
+        "idade": 15,
+        "grupo": "Crianças e Adolescentes",
+        "pontuacao": 70,
+        "pontuacao_maxima": 180,
+        "acertos": 4,
+        "erros": 5,
+        "aproveitamento": 44.4,
+        "tempo_segundos": 31.71,
+        "data_hora": "08/06/2026 22:50:59"
+    }
+]

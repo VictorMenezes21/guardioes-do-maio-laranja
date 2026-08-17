@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% set titulo = "Mini-game" %}
+
+{% block content %}
+<section class="quiz-layout">
+    <aside class="quiz-side card">
+        <span class="badge">{{ jogador.grupo }}</span>
+        <h2>{{ jogador.nome }}</h2>
+        <p>Pergunta {{ numero }} de {{ total }}</p>
+        <p>Nível: <strong>{{ pergunta.nivel }}</strong></p>
+        <p>Valor: <strong>{{ pontos_nivel }} pontos</strong></p>
+        <div class="timer-box">
+            ⏱️ <span id="timer">00:00</span>
+        </div>
+    </aside>
+
+    <section class="card quiz-card">
+        <div class="progress-bar">
+            <div style="width: {{ (numero / total) * 100 }}%"></div>
+        </div>
+
+        <h1>{{ pergunta.pergunta }}</h1>
+
+        <form method="POST" action="{{ url_for('responder_quiz') }}" class="answers">
+            {% for opcao in pergunta.opcoes %}
+                <label class="answer-option">
+                    <input type="radio" name="resposta" value="{{ opcao[0] }}" required>
+                    <span>{{ opcao }}</span>
+                </label>
+            {% endfor %}
+
+            <button class="btn btn-primary full" type="submit">Responder</button>
+        </form>
+    </section>
+</section>
+
+<script>
+    let seconds = {{ tempo_decorrido }};
+
+    function formatTime(totalSeconds) {
+        const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+        const secs = (totalSeconds % 60).toString().padStart(2, '0');
+        return `${minutes}:${secs}`;
+    }
+
+    function updateTimer() {
+        document.getElementById('timer').textContent = formatTime(seconds);
+        seconds += 1;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+{% endblock %}

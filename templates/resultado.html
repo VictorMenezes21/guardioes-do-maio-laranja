@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% set titulo = "Resultado Final" %}
+
+{% block content %}
+<section class="card result-card">
+    <span class="badge">Missão concluída</span>
+    <h1>Parabéns, Guardião!</h1>
+    <p class="muted">Você concluiu o desafio Pique ECA.</p>
+
+    <div class="stats-grid">
+        <div class="stat"><strong>{{ resultado.pontuacao }}/{{ resultado.pontuacao_maxima }}</strong><span>Pontos</span></div>
+        <div class="stat"><strong>{{ resultado.acertos }}</strong><span>Acertos</span></div>
+        <div class="stat"><strong>{{ resultado.erros }}</strong><span>Erros</span></div>
+        <div class="stat"><strong>{{ resultado.tempo_formatado }}</strong><span>Tempo</span></div>
+    </div>
+
+    <p class="big-message">
+        Aproveitamento: <strong>{{ "%.1f"|format(resultado.aproveitamento) }}%</strong>
+    </p>
+
+    <p>
+        A medalha é definida pela colocação atual no ranking: 1º lugar recebe Ouro,
+        2º Prata e 3º Bronze.
+    </p>
+
+    <div class="hero-buttons centered">
+        <a class="btn btn-primary" href="{{ url_for('ranking_web') }}">Ver ranking</a>
+        <a class="btn btn-secondary" href="{{ url_for('menu') }}">Voltar ao menu</a>
+    </div>
+</section>
+{% endblock %}

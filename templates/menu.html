@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% set titulo = "Menu Principal" %}
+
+{% block content %}
+<section class="dashboard-header">
+    <div>
+        <span class="badge">Central dos Guardiões</span>
+        <h1>Olá, {{ jogador.nome }}!</h1>
+        <p>Grupo: <strong>{{ jogador.grupo }}</strong></p>
+    </div>
+    <a class="btn btn-primary" href="{{ url_for('iniciar_quiz_web') }}">Começar mini-game</a>
+</section>
+
+<section class="menu-grid">
+    <a class="menu-card" href="{{ url_for('orientacoes') }}">
+        <span>🛡️</span>
+        <h2>Orientações</h2>
+        <p>Veja cuidados importantes para crianças, adolescentes e responsáveis.</p>
+    </a>
+
+    <a class="menu-card" href="{{ url_for('denuncias') }}">
+        <span>🛑</span>
+        <h2>Canais de denúncia</h2>
+        <p>Consulte canais de apoio e denúncia disponíveis.</p>
+    </a>
+
+    <a class="menu-card highlight" href="{{ url_for('iniciar_quiz_web') }}">
+        <span>🎮</span>
+        <h2>Mini-game</h2>
+        <p>Responda perguntas, ganhe pontos e entre no ranking.</p>
+    </a>
+
+    <a class="menu-card" href="{{ url_for('campanha') }}">
+        <span>🧡</span>
+        <h2>Informações da campanha</h2>
+        <p>Entenda o Maio Laranja e sua importância social.</p>
+    </a>
+
+    <a class="menu-card" href="{{ url_for('ranking_web') }}">
+        <span>🏆</span>
+        <h2>Ranking</h2>
+        <p>Acompanhe a colocação dos guardiões em tempo quase real.</p>
+    </a>
+
+    <a class="menu-card" href="{{ url_for('novo_jogador') }}">
+        <span>👤</span>
+        <h2>Novo jogador</h2>
+        <p>Troque de participante e inicie uma nova missão.</p>
+    </a>
+</section>
+{% endblock %}

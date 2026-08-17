@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% set titulo = "Cadastro do Jogador" %}
+
+{% block content %}
+<section class="card narrow">
+    <span class="badge">Cadastro</span>
+    <h1>Quem será o guardião da vez?</h1>
+    <p class="muted">Preencha os dados abaixo para o sistema escolher o grupo de perguntas.</p>
+
+    {% if erro %}
+        <div class="alert error">{{ erro }}</div>
+    {% endif %}
+
+    <form method="POST" class="form">
+        <label>
+            Nome do jogador
+            <input type="text" name="nome" placeholder="Ex.: Victor" required>
+        </label>
+
+        <label>
+            Idade
+            <input type="number" name="idade" min="1" max="120" placeholder="Ex.: 18" required>
+        </label>
+
+        <div class="form-grid">
+            <label>
+                Possui filhos?
+                <select name="tem_filhos">
+                    <option value="N">Não</option>
+                    <option value="S">Sim</option>
+                </select>
+            </label>
+
+            <label>
+                Convive com crianças?
+                <select name="convive_criancas">
+                    <option value="N">Não</option>
+                    <option value="S">Sim</option>
+                </select>
+            </label>
+        </div>
+
+        <button class="btn btn-primary full" type="submit">Continuar</button>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% set titulo = "Feedback" %}
+
+{% block content %}
+<section class="card narrow feedback-card">
+    {% if acertou %}
+        <span class="result-icon success">✅</span>
+        <h1>Resposta correta!</h1>
+    {% else %}
+        <span class="result-icon danger">❌</span>
+        <h1>Resposta incorreta</h1>
+        <p>A resposta correta era <strong>{{ pergunta.resposta }}</strong>.</p>
+    {% endif %}
+
+    <article class="explanation">
+        <h2>Por que isso importa?</h2>
+        <p>{{ pergunta.justificativa }}</p>
+    </article>
+
+    {% if finalizado %}
+        <a class="btn btn-primary full" href="{{ url_for('finalizar_quiz') }}">Ver resultado final</a>
+    {% else %}
+        <a class="btn btn-primary full" href="{{ url_for('quiz') }}">Próxima pergunta</a>
+    {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% set titulo = "Pique ECA - Abertura" %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-text">
+        <span class="badge">Mini-game educativo</span>
+        <h1>Guardiões do Maio Laranja</h1>
+        <p>
+            Uma experiência interativa para aprender sobre proteção, prevenção,
+            direitos das crianças e canais de denúncia.
+        </p>
+        <div class="hero-buttons">
+            <a class="btn btn-primary" href="{{ url_for('cadastro') }}">Iniciar missão</a>
+            <a class="btn btn-secondary" href="{{ url_for('ranking_web') }}">Ver ranking</a>
+        </div>
+    </div>
+
+    <div class="hero-card">
+        <div class="shield">🛡️</div>
+        <h2>Missão do Guardião</h2>
+        <p>
+            Responda ao quiz, aprenda com as justificativas e entre para o ranking dos guardiões.
+        </p>
+        <ul>
+            <li>Quiz por faixa etária</li>
+            <li>Cronômetro durante o desafio</li>
+            <li>Ranking local em JSON</li>
+            <li>Interface inspirada no Maio Laranja</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

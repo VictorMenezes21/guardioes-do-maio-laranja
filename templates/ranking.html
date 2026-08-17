@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% set titulo = "Ranking dos Guardiões" %}
+
+{% block content %}
+<section class="content-page">
+    <div class="page-title">
+        <span class="badge">🏆 Atualização automática</span>
+        <h1>Ranking dos Guardiões</h1>
+        <p>A tela atualiza sozinha a cada 3 segundos, sem precisar apertar F5.</p>
+    </div>
+
+    <div id="ranking-list" class="ranking-list">
+        <article class="card">Carregando ranking...</article>
+    </div>
+
+    <div class="center-actions">
+        <a class="btn btn-primary" href="{{ url_for('cadastro') }}">Novo jogador</a>
+        <a class="btn btn-secondary" href="{{ url_for('menu') }}">Voltar ao menu</a>
+    </div>
+</section>
+
+<script>
+    function medalEmoji(medalha) {
+        if (medalha === 'Ouro') return '🥇';
+        if (medalha === 'Prata') return '🥈';
+        if (medalha === 'Bronze') return '🥉';
+        return '🛡️';
+    }
+
+    async function carregarRanking() {
+        const resposta = await fetch('{{ url_for('api_ranking') }}');
+        const ranking = await resposta.json();
+        const container = document.getElementById('ranking-list');
+
+        if (ranking.length === 0) {
+            container.innerHTML = '<article class="card empty-state">Nenhum jogador no ranking ainda.</article>';
+            return;
+        }
+
+        container.innerHTML = ranking.map(jogador => `
+            <article class="ranking-card">
+                <div class="ranking-position">
+                    <span>${medalEmoji(jogador.medalha)}</span>
+                    <strong>${jogador.posicao}º</strong>
+                </div>
+                <div class="ranking-main">
+                    <h2>${jogador.nome}</h2>
+                    <p>${jogador.grupo}</p>
+                </div>
+                <div class="ranking-score">
+                    <strong>${jogador.pontuacao}/${jogador.pontuacao_maxima}</strong>
+                    <span>${jogador.acertos} acertos • ${jogador.tempo_formatado}</span>
+                </div>
+            </article>
+        `).join('');
+    }
+
+    carregarRanking();
+    setInterval(carregarRanking, 3000);
+</script>
+{% endblock %}

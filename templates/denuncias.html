@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% set titulo = "Canais de Denúncia" %}
+
+{% block content %}
+<section class="content-page">
+    <div class="page-title">
+        <span class="badge">🛑 Proteção e apoio</span>
+        <h1>Canais oficiais de denúncia</h1>
+        <p>Anote os canais abaixo e procure ajuda em situações de risco ou suspeita.</p>
+    </div>
+
+    <div class="cards-list">
+        {% for canal in canais %}
+            <article class="card channel-card">
+                <div>
+                    <h2>{{ canal.nome }}</h2>
+                    <p>{{ canal.funcao }}</p>
+                </div>
+                <div class="channel-info">
+                    <strong>📞 {{ canal.numero }}</strong>
+                    <span>⏰ {{ canal.disponibilidade }}</span>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+
+    <div class="center-actions">
+        <a class="btn btn-secondary" href="{{ url_for('menu') }}">Voltar ao menu</a>
+    </div>
+</section>
+{% endblock %}
